@@ -1,0 +1,46 @@
+---
+const { lang } = Astro.props;
+
+const sectionStyle =
+  "w-full py-16 px-8 md:px-[140px] bg-[#FFDDCD] flex flex-col-reverse md:flex-row items-center justify-between";
+const titleStyle =
+  "font-raleway font-semibold text-[32px] leading-[40px] text-[#414141] mb-4 text-center md:text-left";
+const textStyle =
+  "font-mulish text-[16px] leading-[24px] text-[#414141] mb-6 text-center md:text-left";
+const buttonStyle =
+  "hidden md:flex items-center justify-center bg-[#2E2E2E] text-white font-semibold text-[14px] tracking-wider rounded-[2px] h-[64px] w-[321px] py-[14px] px-[50px] transition-colors hover:bg-black cursor-pointer";
+const cardStyle =
+  "w-full max-w-[540px] bg-white border border-[#FC7D6C] rounded-[20px] p-8 md:p-12 flex items-center justify-center mt-8 md:mt-0 shadow-sm";
+---
+
+<section class={sectionStyle}>
+  <div class="max-w-xl">
+    <h3 class={titleStyle}>
+      {
+        lang === "es"
+          ? "Descubre las ventajas e implicaciones de formar parte"
+          : "Discover the advantages and implications of joining"
+      }
+    </h3>
+
+    <p class={textStyle}>
+      {
+        lang === "es"
+          ? "La red de distribuidores autorizados ISDIN es una herramienta para proteger y potenciar los canales de venta que más cuidan nuestra marca. No implicará ningún cambio en tus condiciones comerciales o en vuestra forma de trabajar en el día a día. ¡Consulta la documentación para conocer todos los detalles!"
+          : "The ISDIN authorized distributor network is a tool to protect and boost sales channels that care most about our brand. It will not imply any change in your commercial conditions or your day-to-day way of working. Check the documentation to know all the details!"
+      }
+    </p>
+
+    <button class={buttonStyle}>
+      {lang === "es" ? "VER DOCUMENTACIÓN" : "SEE DOCUMENTATION"}
+    </button>
+  </div>
+
+  <div class={cardStyle + " mb-8 md:mb-0"}>
+    <img
+      src="/LogoISDIN2.png"
+      alt="Logo ISDIN Autorizado"
+      class="w-full max-w-xs h-auto object-contain"
+    />
+  </div>
+</section>
