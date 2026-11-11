@@ -1,0 +1,87 @@
+---
+const { lang } = Astro.props;
+
+const sectionStyle =
+  "w-full pt-10 pb-16 px-8 md:px-[140px] bg-gradient-to-r from-[#FDB28E] to-[#FC7D6C] flex flex-col-reverse md:flex-row items-center justify-between";
+const titleStyle =
+  "font-raleway font-semibold text-[32px] leading-[40px] text-[#414141] mb-4 text-center md:text-left";
+const textStyle =
+  "font-mulish text-[16px] leading-[24px] text-[#414141] mb-6 text-center md:text-left";
+const buttonStyle =
+  "hidden md:flex items-center justify-center bg-[#2E2E2E] text-white font-semibold text-[14px] tracking-wider rounded-[2px] h-[64px] w-[289px] py-[14px] px-[50px] transition-colors hover:bg-black cursor-pointer";
+---
+
+<section class={sectionStyle}>
+  <div class="max-w-xl flex flex-col items-center md:items-start">
+    <h1 class={titleStyle}>
+      {
+        lang === "es"
+          ? "Únete a la nueva red oficial de distribuidores autorizados ISDIN"
+          : "Join the new official network of ISDIN authorized distributors"
+      }
+    </h1>
+
+    <!-- parrafo movil -->
+    <p class={`${textStyle} hidden md:block`}>
+      {
+        lang === "es" ? (
+          <>
+            Seguimos dando pasos en nuestro{" "}
+            <strong>compromiso con la farmacia</strong>. Contamos con tu punto
+            de venta como <strong>distribuidor autorizado de ISDIN</strong>,
+            certificando la calidad y excelencia del mismo así como la
+            autenticidad de los productos de la marca puestos a la venta. Este{" "}
+            <strong>paso es imprescindible</strong> para proteger tu farmacia y
+            continuar creciendo juntos los próximos años.
+          </>
+        ) : (
+          <>
+            We continue taking steps in our{" "}
+            <strong>commitment to the pharmacy</strong>. We count on your point
+            of sale as an <strong>authorized ISDIN distributor</strong>,
+            certifying its quality and excellence as well as the authenticity of
+            the brand's products offered for sale. This{" "}
+            <strong>step is essential</strong> to protect your pharmacy and
+            continue growing together in the coming years.
+          </>
+        )
+      }
+    </p>
+
+    <!-- parrafo movil -->
+    <p class={`${textStyle} block md:hidden`}>
+      {
+        lang === "es" ? (
+          <>
+            Seguimos dando pasos en nuestro
+            <strong> compromiso con la farmacia</strong>. Ahora puedes
+            convertirte en un <strong>distribuidor autorizado de ISDIN</strong>,
+            certificando la calidad y excelencia de tu punto de venta y la
+            autenticidad de los productos ISDIN disponibles en tu farmacia.
+            ¡Contamos contigo!
+          </>
+        ) : (
+          <>
+            We continue taking steps in our
+            <strong> commitment to the pharmacy</strong>. Now you can become an
+            <strong> authorized ISDIN distributor</strong>, certifying the
+            quality and excellence of your point of sale and the authenticity of
+            ISDIN products available in your pharmacy. We count on you!
+          </>
+        )
+      }
+    </p>
+
+    <button class={buttonStyle}>
+      {lang === "es" ? "MÁS INFORMACIÓN" : "MORE INFORMATION"}
+    </button>
+  </div>
+
+  <div class="mb-8 md:mb-0 flex items-center justify-center">
+    <img
+      src="/LogoISDIN1.png"
+      alt="Logo de Distribuidor Autorizado ISDIN"
+      class="w-full max-w-sm h-auto"
+    />
+  </div>
+</section>
